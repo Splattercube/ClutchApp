@@ -1,0 +1,45 @@
+ClutchApp/
+│
+├── backend/
+│   │
+│   ├── app.py                 # Starts Flask and registers routes
+│   ├── models.py              # SQLAlchemy database models
+│   ├── config.py              # Database/config settings (optional)
+│   ├── requirements.txt
+│   │
+│   ├── instance/
+│   │     └── clutch.db        # SQLite database
+│   │
+│   ├── uploads/               # Uploaded Valorant clips
+│   │
+│   ├── routes/
+│   │     ├── auth.py          # Signup/Login routes
+│   │     ├── clips.py         # Upload/Get clips
+│   │     └── likes.py         # Like routes (optional)
+│
+├── frontend/
+│   │
+│   ├── home.html
+│   ├── login.html
+│   ├── signup.html
+│   ├── upload.html
+│   ├── profile.html
+│   │
+│   ├── css/
+│   │     ├── style.css
+│   │     ├── login.css
+│   │     └── profile.css
+│   │
+│   ├── scripts/
+│   │     ├── home.js
+│   │     ├── login.js
+│   │     ├── signup.js
+│   │     ├── upload.js
+│   │     └── profile.js
+│   │
+│   └── assets/
+│         ├── images/
+│         └── icons/
+│
+├── .gitignore
+└── README.md
