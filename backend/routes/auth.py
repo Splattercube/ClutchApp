@@ -57,7 +57,6 @@ def login():
         return {"error": "Missing email or password"}, 400
 
     user = User.query.filter_by(email=email).first()
-
     if not user:
         return {"error": "Invalid email or password"}, 401
 
