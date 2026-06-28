@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from werkzeug.utils import secure_filename
 import os
 
-from models import db, Clip
+from models import db, Clip, Like
 
 clips_bp = Blueprint("clips", __name__)
 
@@ -53,3 +53,39 @@ def upload_clip():
             "agent": new_clip.agent, "rank": new_clip.rank, "user_id": new_clip.user_id
         }
     }, 201
+
+
+
+@clips_bp.route("/clips/<int:clip_id>/like", methods=["POST"])
+def like_clip(clip_id):
+    user_id = request.json.get("user_id")
+
+    if not user_id:
+        return {"error": "Missing user_id"}, 400
+
+    clip = Clip.query.get(clip_id)
+
+    if not clip:
+        return {"error": "Clip not found"}, 404
+
+    existing_like = Like.query.filter_by(
+        user_id=user_id,
+        clip_id=clip_id
+    ).first()
+
+    if existing_like:
+        return {"error": "You already liked this clip"}, 400
+
+    new_like = Like(
+        user_id=user_id,
+        clip_id=clip_id
+    )
+    clip.likes += 1
+
+    db.session.add(new_like)
+    db.session.commit()
+
+    return {
+        "message": "Clip liked",
+        "likes": clip.likes
+    }, 200

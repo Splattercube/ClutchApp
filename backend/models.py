@@ -24,3 +24,9 @@ class Clip(db.Model):
     created_at =  db.Column(db.DateTime , default=datetime.now)
 
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+
+class Like(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    clip_id = db.Column(db.Integer, db.ForeignKey("clip.id"), nullable=False)
