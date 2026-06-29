@@ -15,7 +15,7 @@ document.getElementById("uploadForm").addEventListener("submit", function(event)
     formData.append("agent", agent);
     formData.append("rank", rank);
 
-    fetch("http://127.0.0.1:5000/clips", {
+    fetch("https://clutchapp.onrender.com/clips", {
         method: "POST",
         body: formData
     })

@@ -15,7 +15,7 @@ fetch("http://127.0.0.1:5000/clips")
                 <p>Rank: ${clip.rank}</p>
 
                 <video width="400" controls>
-                    <source src="http://127.0.0.1:5000/${clip.video_path}" type="video/mp4">
+                    <source src="https://clutchapp.onrender.com/${clip.video_path}" type="video/mp4">
                 </video>
 
 
@@ -34,7 +34,7 @@ fetch("http://127.0.0.1:5000/clips")
 
 function likeClip(clipId) {
     const userId = localStorage.getItem("user_id");
-    fetch(`http://127.0.0.1:5000/clips/${clipId}/like`, {
+    fetch(`https://clutchapp.onrender.com/clips/${clipId}/like`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

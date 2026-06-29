@@ -4,7 +4,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    fetch("http://127.0.0.1:5000/login", {
+    fetch("https://clutchapp.onrender.com/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
