@@ -1,4 +1,7 @@
+
+
 document.getElementById("uploadForm").addEventListener("submit", function(event) {
+    console.log("Upload clicked")
     event.preventDefault();
 
     const userId = localStorage.getItem("user_id");
