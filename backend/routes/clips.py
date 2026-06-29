@@ -38,6 +38,8 @@ def upload_clip():
     filename = secure_filename(video.filename)
     video_path = os.path.join(UPLOAD_FOLDER, filename)
 
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
     video.save(video_path)
 
     new_clip = Clip( user_id=user_id, caption=caption, agent=agent, rank=rank,
