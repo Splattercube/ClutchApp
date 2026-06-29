@@ -22,7 +22,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 
         if (data.message === "User created successfully") {
             alert("Account created!");
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         } else {
             alert(data.error);
         }
