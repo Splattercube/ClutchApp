@@ -4,6 +4,7 @@ fetch(`${API_URL}/clips${userId ? `?user_id=${userId}` : ""}`)
     .then(response => response.json())
     .then(data => {
         console.log(data);
+        console.log(data.clips.map(c => ({ id: c.id, liked: c.liked })))
 
         const feed = document.getElementById("clipFeed");
 

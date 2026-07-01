@@ -20,11 +20,11 @@ def get_clips():
         if user_id:
             existing_like = Like.query.filter_by(user_id=user_id, clip_id=clip.id).first()
             liked = existing_like is not None
-            
+
         clipList.append({
             "id":clip.id, "caption":clip.caption, "video_path":clip.video_path, 
             "agent":clip.agent, "rank":clip.rank, "likes":clip.likes, "created_at":str(clip.created_at),
-            "user_id":clip.user_id, "username":clip.user.username
+            "user_id":clip.user_id, "username": clip.user.username if clip.user else "Unknown User"
         })
     return {"clips":clipList}
 
