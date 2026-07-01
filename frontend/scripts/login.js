@@ -3,8 +3,10 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const button = event.target.querySelector("button[type='submit']");
+    button.classList.add("loading");
 
-    fetch("https://clutchapp.onrender.com/login", {
+    fetch(`${API_URL}/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -27,6 +29,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
             window.location.href = "home.html";
         } else {
             alert(data.error);
+            button.classList.remove("loading");
         }
     });
 });

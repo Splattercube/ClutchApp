@@ -9,6 +9,8 @@ document.getElementById("uploadForm").addEventListener("submit", function(event)
     const caption = document.getElementById("caption").value;
     const agent = document.getElementById("agent").value;
     const rank = document.getElementById("rank").value;
+    const button = event.target.querySelector("button[type='submit']");
+    button.classList.add("loading");
 
     const formData = new FormData();
 
@@ -18,7 +20,7 @@ document.getElementById("uploadForm").addEventListener("submit", function(event)
     formData.append("agent", agent);
     formData.append("rank", rank);
 
-    fetch("https://clutchapp.onrender.com/clips", {
+    fetch(`${API_URL}/clips`, {
         method: "POST",
         body: formData
     })
@@ -31,6 +33,7 @@ document.getElementById("uploadForm").addEventListener("submit", function(event)
             window.location.href = "home.html";
         } else {
             alert(data.error);
+            button.classList.remove("loading");
         }
     });
 });

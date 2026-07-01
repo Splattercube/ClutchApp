@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Clip</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HUD Bar-->
+    <div class ="hud-bar">
+        <a href="home.html" class="logo-link">
+            <div class="logo">
+                <img src="images/crosshair.png" alt ="Clutch Logo" class ="logo-icon">
+                <h1>Clutch</h1>
+            </div>
+        </a>
+
+        <a href="upload.html" class = "hud-center">Upload Clip</a>
+
+        <div class="hud-right">
+            <div id="loggedOutLinks">
+                <a href="index.html">Log In</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+            <div id="loggedInLinks" style="display: none;">
+                <span id="welcomeUser"></span>
+                <a href="#" id="logoutBtn">Log Out</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- HUD END -->
+
+    <main class = "page-content">
+        <div class="container">
+            <h2>Post Your Clip!</h2>
+
+            <form id="uploadForm">
+                <input type="file" id="video" accept="video/*" required>
+
+                <input type="text" id="caption" placeholder="Caption">
+
+                <select id="agent" required>
+                    <option value="" disabled selected> Agent</option>
+                    <option value="Astra">Astra</option>
+                    <option value="Breach">Breach</option>
+                    <option value="Brimstone">Brimstone</option>
+                    <option value="Chamber">Chamber</option>
+                    <option value="Clove">Clove</option>
+                    <option value="Cypher">Cypher</option>
+                    <option value="Deadlock">Deadlock</option>
+                    <option value="Fade">Fade</option>
+                    <option value="Gecko">Gecko</option>
+                    <option value="Harbor">Harbor</option>
+                    <option value="Iso">Iso</option>
+                    <option value="Jett">Jett</option>
+                    <option value="Kay/o">Kay/o</option>
+                    <option value="Killjoy">Killjoy</option>
+                    <option value="Miks">Miks</option>
+                    <option value="Neon">Neon</option>
+                    <option value="Omen">Omen</option>
+                    <option value="Phoenix">Phoenix</option>
+                    <option value="Raze">Raze</option>
+                    <option value="Reyna">Reyna</option>
+                    <option value="Sage">Sage</option>
+                    <option value="Skye">Skye</option>
+                    <option value="Sova">Sova</option>
+                    <option value="Tejo">Tejo</option>
+                    <option value="Veto">Veto</option>
+                    <option value="Viper">Viper</option>
+                    <option value="Vyse">Vyse</option>
+                    <option value="Waylay">Waylay</option>
+                    <option value="Yoru">Yoru</option>
+                </select>
+
+                    <select id="rank" required>
+                        <option value="" disabled selected>Rank</option>
+                        <option value="Unrated">Unrated</option>
+                        <option value="Iron">Iron</option>
+                        <option value="Bronze">Bronze</option>
+                        <option value="Silver">Silver</option>
+                        <option value="Gold">Gold</option>
+                        <option value="Platinum">Platinum</option>
+                        <option value="Diamond">Diamond</option>
+                        <option value="Ascendant">Ascendant</option>
+                        <option value="Immortal">Immortal</option>
+                        <option value="Radiant">Radiant</option>
+                    </select>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </main>
+    
+    <script src="scripts/config.js"></script>
+    <script src="scripts/upload.js"></script>
+</body>
+</html>

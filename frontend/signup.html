@@ -17,16 +17,22 @@
         <a href="home.html" class="logo-link">
             <div class="logo">
                 <img src="images/crosshair.png" alt ="Clutch Logo" class ="logo-icon">
-                <h1 class ="clutch-text">Clutch</h1>
+                <h1>Clutch</h1>
             </div>
         </a>
 
         <a href="upload.html" class = "hud-center">Upload Clip</a>
 
         <div class="hud-right">
-            <a href="index.html">Log In</a>
-            <a href="signup.html">Sign Up</a>
-        </div>>
+            <div id="loggedOutLinks">
+                <a href="index.html">Log In</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+            <div id="loggedInLinks" style="display: none;">
+                <span id="welcomeUser"></span>
+                <a href="#" id="logoutBtn">Log Out</a>
+            </div>
+        </div>
 
     </div>
     <!-- HUD END -->
@@ -74,7 +80,8 @@
 
         </div>
     </main>
-
+    
+    <script src="scripts/config.js"></script>
     <script src="scripts/signup.js"></script>
 </body>
 </html>

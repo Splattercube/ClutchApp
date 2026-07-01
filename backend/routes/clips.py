@@ -76,7 +76,14 @@ def like_clip(clip_id):
     ).first()
 
     if existing_like:
-        return {"error": "You already liked this clip"}, 400
+        db.session.delete(existing_like)
+        clip.likes -= 1
+        db.session.commit()
+
+        return {
+            "message": "Clip unliked",
+            "likes": clip.likes
+        }, 200
 
     new_like = Like(
         user_id=user_id,

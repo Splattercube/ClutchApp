@@ -1,49 +1,40 @@
-<!DOCTYPE html>
-<html>
 <head>
-    <title>Upload Clip</title>
+    <Title>Welcome to Clutch!</Title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- HUD Bar-->
     <div class ="hud-bar">
         <a href="home.html" class="logo-link">
             <div class="logo">
                 <img src="images/crosshair.png" alt ="Clutch Logo" class ="logo-icon">
-                <h1 class ="clutch-text">Clutch</h1>
+                <h1>Clutch</h1>
             </div>
         </a>
 
         <a href="upload.html" class = "hud-center">Upload Clip</a>
 
         <div class="hud-right">
-            <a href="index.html">Log In</a>
-            <a href="signup.html">Sign Up</a>
-        </div>>
+            <div id="loggedOutLinks">
+                <a href="index.html">Log In</a>
+                <a href="signup.html">Sign Up</a>
+            </div>
+            <div id="loggedInLinks" style="display: none;">
+                <span id="welcomeUser"></span>
+                <a href="#" id="logoutBtn">Kick</a>
+            </div>
+        </div>
 
     </div>
-    <!-- HUD END -->
 
     <main class = "page-content">
-        <h2>Upload Valorant Clip</h2>
-
-        <form id="uploadForm">
-            <input type="file" id="video" accept="video/*" required>
-
-            <input type="text" id="caption" placeholder="Caption">
-
-            <input type="text" id="agent" placeholder="Agent">
-
-            <input type="text" id="rank" placeholder="Rank">
-
-            <button type="submit">Upload</button>
-        </form>
+        <div id="clipFeed"></div>
     </main>
 
-    <script src="scripts/upload.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/home.js"></script>
 </body>
-</html>

@@ -1,0 +1,258 @@
+/*Background and font*/
+body{
+    background: #0D0D0E;
+    font-family: 'Inter', sans-serif;
+}
+h1{
+    font-size: 25px;
+    margin: 0;
+}
+h2{
+    text-align: center;
+    font-size: 50px;
+}
+
+h3{
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+
+
+/*-----------------------------HUD BAR CSS--------------*/
+/*Blue/green gradiant*/
+.clutch-text{
+    background: linear-gradient(to bottom, #2ee6a0, #17c9c9, #0099ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+/*Clutch Logo*/
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/*image*/
+.logo-icon{
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.logo-link:hover .clutch-text{
+    background: white;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hud-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: black;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 24px 0px 24px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.hud-center {
+    justify-self: center;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #17c9c9;
+    border-radius: 8px;
+    padding: 8px 20px;
+    width: 200px;
+    text-align: center;
+    background: linear-gradient(to bottom, #2ee6a0, #17c9c9, #0099ff);
+}
+
+.hud-center:active {
+    filter: brightness(0.7);
+}
+
+.hud-right {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.hud-right a:hover {
+    background: linear-gradient(to bottom, #2ee6a0, #17c9c9, #0099ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/*Hyperlink to upload*/
+a{
+    color: white;
+    text-decoration: none;
+}
+
+/*kneady dividing line between Login and Signup*/
+.hud-right a:last-child{
+    border-left: 1px solid #666;
+    padding-left: 16px;
+}
+
+/*Used to prevent stuff from being hidden by the task bar*/
+.page-content{
+    margin-top: 70px;
+}
+/*removes underline*/
+.logo-link {
+    text-decoration: none;
+}
+
+/*fixs css bug*/
+#loggedInLinks, #loggedOutLinks{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#welcomeUser {
+    color: white;
+    font-size: 16px;
+}
+/*-------------------------------------------------------------*/
+
+/*Login and Signup containers*/
+.container{
+    background-color: #161617;
+    border-radius: 16px;
+    padding: 50px;
+    width: 500px;
+    box-sizing: border-box;
+    color: white;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input, select{
+    background-color: #0D0D0E;
+    color: white;
+    border: 1px solid #17c9c9;
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+button{
+    background: linear-gradient(to bottom, #2ee6a0, #17c9c9, #0099ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /*font-weight: bold;*/
+}
+
+button[type="submit"].loading {
+    filter: brightness(0.6);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/*--------------Clip CSS---------------------*/
+.clip-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 650px;
+}
+
+#clipFeed {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.clip-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.clip-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clip-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.agent-icon, .rank-icon {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+video {
+    border-radius: 8px;
+    width: 100%;
+}
+
+.clip-caption {
+    font-size: 13px;
+    color: white;
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+.clip-reacts {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.like-btn {
+    background: none;    
+    font-family: "Segoe UI Symbol", Arial, sans-serif;
+    border: none;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.like-btn.liked {
+    background: linear-gradient(to bottom, #2ee6a0, #17c9c9, #0099ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/* 
+#161617
