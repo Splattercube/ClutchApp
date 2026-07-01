@@ -1,4 +1,6 @@
-fetch(`${API_URL}/clips`)
+const userId = localStorage.getItem("user_id");
+
+fetch(`${API_URL}/clips${userId ? `?user_id=${userId}` : ""}`)
     .then(response => response.json())
     .then(data => {
         console.log(data);
@@ -71,7 +73,7 @@ fetch(`${API_URL}/clips`)
                     </div>
 
                     <div class = "clip-reacts">
-                        <button class="like-btn" onclick="likeClip(${clip.id}, this)">
+                        <button class="like-btn ${clip.liked ? 'liked' : ''}" onclick="likeClip(${clip.id}, this)">
                             &hearts;
                         </button>
                         <p id="likes-${clip.id}">${clip.likes}</p>
@@ -109,6 +111,9 @@ function likeClip(clipId, button) {
         if (data.message === "Clip liked") {
             document.getElementById(`likes-${clipId}`).textContent = data.likes;
             button.classList.add("liked");
+        } else if (data.message === "Clip unliked") {
+            document.getElementById(`likes-${clipId}`).textContent = data.likes;
+            button.classList.remove("liked");
         } else {
             alert(data.error);
         }

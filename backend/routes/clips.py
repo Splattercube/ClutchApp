@@ -10,11 +10,17 @@ UPLOAD_FOLDER = "uploads"
 
 @clips_bp.route("/clips", methods=["GET"])
 def get_clips():
+    user_id = request.args.get("user_id")
     clips = Clip.query.order_by(Clip.created_at.desc()).all()
 
     clipList = []
 
     for clip in clips:
+        liked = False
+        if user_id:
+            existing_like = Like.query.filter_by(user_id=user_id, clip_id=clip.id).first()
+            liked = existing_like is not None
+            
         clipList.append({
             "id":clip.id, "caption":clip.caption, "video_path":clip.video_path, 
             "agent":clip.agent, "rank":clip.rank, "likes":clip.likes, "created_at":str(clip.created_at),
