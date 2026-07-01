@@ -5,44 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clutch - Login</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- HUD Bar-->
+    <div class ="hud-bar">
+        <a href="home.html" class="logo-link">
+            <div class="logo">
+                <img src="images/crosshair.png" alt ="Clutch Logo" class ="logo-icon">
+                <h1 class ="clutch-text">Clutch</h1>
+            </div>
+        </a>
 
-    <div class="container">
+        <a href="upload.html" class = "hud-center">Upload Clip</a>
 
-        <h1>CLUTCH</h1>
-        <h2>Login</h2>
-
-        <form id="loginForm">
-
-            <label for="email">Email</label>
-            <input
-                type="email"
-                id="email"
-                placeholder="Enter email"
-                required
-            >
-
-            <label for="password">Password</label>
-            <input
-                type="password"
-                id="password"
-                placeholder="Enter password"
-                required
-            >
-            <button type="submit">
-                Login
-            </button>
-
-        </form>
-
-        <p>
-            Don't have an account?
-            <a href="signup.html">Create One</a>
-        </p>
+        <div class="hud-right">
+            <a href="index.html">Log In</a>
+            <a href="signup.html">Sign Up</a>
+        </div>>
 
     </div>
+    <!-- HUD END -->
+
+    <main class = "page-content">
+        <div class="container">
+
+            <h2>Login</h2>
+
+            <form id="loginForm">
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter email"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                >
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p>
+                Don't have an account?
+                <a class ="clutch-text" href="signup.html">Create One</a>
+            </p>
+
+        </div>
+    </main>
 
     <script src="scripts/login.js"></script>
 </body>
